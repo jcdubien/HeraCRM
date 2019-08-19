@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CONTACT{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="jumbotron my-5">
+            <h1>
+                Contactez-Nous !
+            </h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut fuga id laudantium libero, natus nobis optio
+                pariatur, perspiciatis, quae repudiandae sapiente sed soluta velit veniam voluptas? Accusantium autem
+                corporis cumque deleniti dolor dolorem ea eaque facilis fuga inventore iste iusto nulla omnis qui quisquam
+                repellendus, saepe sapiente suscipit vitae voluptas!
+            </p>
+        </div>
+
+        <div id="contactform my-5">
+            {{ form_start(form) }}
+                <div class="class row">
+                    <div class="col">{{ form_row(form.firstname) }}</div>
+                    <div class="col">{{ form_row(form.lastname) }}</div>
+
+                </div>
+
+                <div class="class row">
+                    <div class="col">{{ form_row(form.phone) }}</div>
+                    <div class="col">{{ form_row(form.email) }}</div>
+
+                </div>
+            {{ form_rest(form) }}
+
+            <div class="formgroup mb-5">
+                <button type="button" class="btn btn-danger">Envoyer</button>
+            </div>
+
+            {{ form_end(form) }}
+
+            <div class="formgroup mb-5">
+                <button type="button" class="btn btn-danger">Envoyer</button>
+            </div>
+            <br/>
+        </div>
+
+        <br/>
+
+    </div>
+{% endblock %}
