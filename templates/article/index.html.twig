@@ -1,19 +1,33 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CrmController!{% endblock %}
+{% block title %}Ajouter un nouvel article{% endblock %}
 
 {% block body %}
-    <div class="container">  <div class="jumbotron my-5">
-            <h1>
-                Titre en gros
-            </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut fuga id laudantium libero, natus nobis optio
-                pariatur, perspiciatis, quae repudiandae sapiente sed soluta velit veniam voluptas? Accusantium autem
-                corporis cumque deleniti dolor dolorem ea eaque facilis fuga inventore iste iusto nulla omnis qui quisquam
-                repellendus, saepe sapiente suscipit vitae voluptas!
-            </p>
+
+    <div class="container container-bottom container-top">
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <div class="block-fonce mx-5 ">
+
+            <h2 class="titre mx-1">Ajouter un nouvel article</h2>
+            {{ form_start(form)}}
+            {{ form_row(form.title) }}
+            {{ form_row(form.content) }}
+            {{ form_row(form.image) }}
+            {{ form_row(form.category) }}
+            <button class="submit btn btn-primary align-content-center">Enregistrer</button>
+            {{ form_end(form)}}
+            <button class="btn btn-secondary mx-1 mt-3"> <a href="javascript:history.back()">Retour</a></button>
+
+
         </div>
 
-
     </div>
+
+
 {% endblock %}

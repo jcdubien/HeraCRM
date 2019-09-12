@@ -1,3 +1,16 @@
+.container-top {
+    margin-top: 10%;
+
+}
+
+.navbar {
+    text-decoration-color: white;
+}
+
+.container-bottom{
+    margin-bottom:10%;
+}
+
 footer {
        position: fixed;
        height: 100px;
@@ -9,3 +22,30 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+.titre{
+    display:flex;
+    justify-content: center;
+    margin:auto;
+}
+
+.texte-presentation{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.block-clair{
+    background-color: #F1F2F3;
+border : 1px;
+}
+
+.block-fonce{
+    background-color: #FCFCFC;
+    border : 1px;
+
+}
+
+.policeshadow {
+    text-shadow: #ffffff 1px 1px 1px 0.5;
+}
+

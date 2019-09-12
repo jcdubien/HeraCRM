@@ -3,39 +3,127 @@
 {% block title %}ACCUEIL{% endblock %}
 
 {% block body %}
-<div class="container">
-    <div class="row  d-flex justify-content-around my-5">
 
-        <div class="card col mr-3">
+{% for flashMessage in app.session.flashbag.get('success') %}
 
-                <div class="card-body ">
-                    <h5 class="card-title">Nos prestations génériques</h5>
-                    <p class="card-text">Qu'elles sont trop bien</p>
-                    <a href="#" class="btn btn-primary">Consulter</a>
-                </div>
+    {{ flashMessage }}
 
-        </div>
+{% endfor %}
 
-        <div class="card col mr-3 ">
+<div class="jumbotron jumbotron-fluid my-5">
+    <h1 class="titre">
+        TITRE
+    </h1>
 
-                <div class="card-body ">
-                    <h5 class="card-title">Notre produit phare</h5>
-                    <p class="card-text">Qu'il est trop bien aussi</p>
-                    <a href="#" class="btn btn-primary">Consulter</a>
-                </div>
 
-        </div>
+    <p class="texte-presentation">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut fuga id laudantium libero, natus nobis optio
+        pariatur, perspiciatis, quae repudiandae sapiente sed soluta velit veniam voluptas? Accusantium autem
+        corporis cumque deleniti dolor dolorem ea eaque facilis fuga inventore iste iusto nulla omnis qui quisquam
+        repellendus, saepe sapiente suscipit vitae voluptas!
+    </p>
+</div>
 
-        <div class="card col mr-3">
+<div class="container container-top block-fonce">
 
-            <div class="card-body col  ">
-                <h5 class="card-title">Nous contacter</h5>
-                <p class="card-text">Parce qu'on est trop forts</p>
-                <a href="#" class="btn btn-primary">Consulter</a>
+    <div class="row">
+
+        <h1 class="titre">titre</h1>
+    </div>
+
+
+    <div class="row">
+            <div class="col-4">
+                <h2 class="titre">texte</h2>
             </div>
+            <div class="col-4">
+                <img src="http://lorempixel.com/400/200" alt="image" class="figure-img">
+            </div>
+            <div class="col-4">
+                <h2 class="titre">texte</h2>
+            </div>
+    </div>
+
+</div>
+
+<div class="container block-clair">
+
+    <div class="row"><h1 class="titre">titre</h1></div>
+
+    <div class="row">
+        <div class="col-4 text-center">
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+        </div>
+
+        <div class="col-4">
+            <img src="http://lorempixel.com/400/200" alt="image" class="figure-img">
+        </div>
+
+        <div class="col-4">
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+
+        </div>
+    </div>
+
+</div><div class="container  block-fonce">
+
+    <div class="row">
+
+        <h1 class="titre">titre</h1>
+    </div>
+
+
+    <div class="row">
+            <div class="col-4">
+                <h2 class="titre">texte</h2>
+            </div>
+            <div class="col-4">
+                <img src="http://lorempixel.com/400/200" alt="image" class="figure-img">
+            </div>
+            <div class="col-4">
+                <h2 class="titre">texte</h2>
+            </div>
+    </div>
+
+</div>
+
+<div class="container  container-bottom block-clair">
+
+    <div class="row"><h1 class="titre">titre</h1></div>
+
+    <div class="row">
+        <div class="col-4 text-center">
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+        </div>
+
+        <div class="col-4">
+            <img src="http://lorempixel.com/400/200" alt="image" class="figure-img">
+        </div>
+
+        <div class="col-4">
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
+            <div class="row titre">texte</div>
 
         </div>
     </div>
 
 </div>
+
+
 {% endblock %}

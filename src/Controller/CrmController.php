@@ -12,7 +12,7 @@ class CrmController extends AbstractController
      */
     public function index()
     {
-        return $this->render('crm/index.html.twig', [
+        return $this->render('commande_choice/index.html.twig', [
             'controller_name' => 'CrmController',
         ]);
     }

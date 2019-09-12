@@ -2,7 +2,9 @@
 
 namespace App\Helper;
 
-use App\Entity\Contact;
+
+use App\Entity\Contacts;
+use Swift_Message;
 use Twig\Environment;
 
 class ContactHelper{
@@ -13,19 +15,17 @@ class ContactHelper{
         $this->renderer=$renderer;
     }
 
-    public function notify(Contact $contact) {
-        $date=$contact->getDatemessage()->format('Y-m-d H:i:s');
-        $message=new \Swift_Message('Nouveau message de M. '.$contact->getFirstname().' '.$contact->getLastname()
-            ->SetFrom('noreply@heracreations.fr')
-            ->SetTo('contact@heracréations.fr')
+    public function notify(Contacts $contact) {
+        $date=$contact->getDatemessage()->format('j,m,Y');
+        /*$message=new Swift_Message('Nouveau message de M. '.$contact->getFirstname().' '.$contact->getLastname())
+            >SetFrom("noreply@heracreations.fr")
+            ->SetTo("contact@heracréations.fr")
             ->SetReplyTo($contact->getEmail())
             ->SetBody($this->renderer->render('emails/contact.html.twig',[
                 'contact'=>$contact,
                 'date'=>$date
-            ])),'text/html');
-        $this->mailer->send($message);
-
-
+            ])),'text/html';
+        $this->mailer->send($message);*/
     }
 }
 

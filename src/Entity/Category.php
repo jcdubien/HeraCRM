@@ -24,13 +24,16 @@ class Category
     private $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Commande", mappedBy="category", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Article", mappedBy="Category", orphanRemoval=true)
      */
-    private $Commande;
+    private $articles;
+
+
 
     public function __construct()
     {
-        $this->Commande = new ArrayCollection();
+
+        $this->articles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -51,33 +54,34 @@ class Category
     }
 
     /**
-     * @return Collection|Commande[]
+     * @return Collection|Article[]
      */
-    public function getCommande(): Collection
+    public function getArticles(): Collection
     {
-        return $this->Commande;
+        return $this->articles;
     }
 
-    public function addCommande(Commande $commande): self
+    public function addArticle(Article $article): self
     {
-        if (!$this->Commande->contains($commande)) {
-            $this->Commande[] = $commande;
-            $commande->setCategory($this);
+        if (!$this->articles->contains($article)) {
+            $this->articles[] = $article;
+            $article->setCategory($this);
         }
 
         return $this;
     }
 
-    public function removeCommande(Commande $commande): self
+    public function removeArticle(Article $article): self
     {
-        if ($this->Commande->contains($commande)) {
-            $this->Commande->removeElement($commande);
+        if ($this->articles->contains($article)) {
+            $this->articles->removeElement($article);
             // set the owning side to null (unless already changed)
-            if ($commande->getCategory() === $this) {
-                $commande->setCategory(null);
+            if ($article->getCategory() === $this) {
+                $article->setCategory(null);
             }
         }
 
         return $this;
     }
+
 }

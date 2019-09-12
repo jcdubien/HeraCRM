@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
+use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CommandeRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class Commande
 {
@@ -42,11 +44,32 @@ class Commande
     private $datecommande;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="Commande")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="smallint")
      */
-    private $category;
+    private $status;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
+    /**
+     * Initialise le slug
+     *
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     *
+     * @return void
+     *
+     */
+    public function initializeslug()
+    {
+        if(empty($this->slug)) {
+            $slugify=new Slugify();
+            $this->slug = $slugify($this->referencecommande);
+        }
+
+    }
 
 
     public function getId(): ?int
@@ -114,17 +137,28 @@ class Commande
         return $this;
     }
 
-    public function getCategory(): ?Category
+    public function getStatus(): ?int
     {
-        return $this->category;
+        return $this->status;
     }
 
-    public function setCategory(?Category $category): self
+    public function setStatus(int $status): self
     {
-        $this->category = $category;
+        $this->status = $status;
 
         return $this;
     }
 
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
 
 }

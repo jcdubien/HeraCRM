@@ -26,6 +26,16 @@ class Utilisateur
      */
     private $motdepasse;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $godmode;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $username;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +61,30 @@ class Utilisateur
     public function setMotdepasse(string $motdepasse): self
     {
         $this->motdepasse = $motdepasse;
+
+        return $this;
+    }
+
+    public function getGodmode(): ?bool
+    {
+        return $this->godmode;
+    }
+
+    public function setGodmode(bool $godmode): self
+    {
+        $this->godmode = $godmode;
+
+        return $this;
+    }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
 
         return $this;
     }

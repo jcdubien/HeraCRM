@@ -2,18 +2,114 @@
 
 {% block title %}BACK OFFICE{% endblock %}
 
+
 {% block body %}
-    <div class="container">
-        <div class="jumbotron my-5">
-            <h1>
-                Titre en gros
-            </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut fuga id laudantium libero, natus nobis optio
-                pariatur, perspiciatis, quae repudiandae sapiente sed soluta velit veniam voluptas? Accusantium autem
-                corporis cumque deleniti dolor dolorem ea eaque facilis fuga inventore iste iusto nulla omnis qui quisquam
-                repellendus, saepe sapiente suscipit vitae voluptas!
-            </p>
+
+        <div class="jumbotron titre my-5">
+
+            <div class="row titre">
+
+                <h1>
+                    GESTION DES ARTICLES ET COMMANDES
+                </h1>
+
+            </div>
+
         </div>
 
-    </div>
+        <div class="row container-bottom justify-content-around">
+
+            <div class="col-5 float-left">
+
+                <div class="block-clair mb-5 mx-5 border-primary">
+
+
+                    <div class="card w-auto">
+                        <div class="card-body">
+                            <h5 class="card-title">Nouvelle commande</h5>
+
+                            <a href="{{ path('commande')  }}" class="btn btn-primary ">Enregistrer</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block-fonce mx-5 mb-5 ">
+
+
+                    <div class="card w-auto">
+                        <div class="card-body">
+                            <h5 class="card-title">Nouvel article</h5>
+
+                            <a href="{{ path('article')  }}" class="btn btn-primary ">Enregistrer</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="block-fonce mx-5 mb-5">
+
+
+                    <div class="card w-auto">
+                        <div class="card-body">
+                            <h5 class="card-title">Tous les articles</h5>
+
+                            <a href="{{ path('article')  }}" class="btn btn-primary ">Voir</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="block-fonce mx-5  ">
+
+
+                    <div class="card w-auto">
+                        <div class="card-body">
+                            <h5 class="card-title">Toutes les commandes</h5>
+
+                            <a href="{{ path('article')  }}" class="btn btn-primary ">Voir</a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="col-5 block-fonce mx-5">
+
+
+                <div class="card w-auto container-bottom" style="width: 18rem;">
+
+                    <h5 class="card-title text-center h2">Dernières commandes</h5>
+
+                    <ul class="list-group list-group-flush  text-center">
+
+                    {% for commande in commandes|slice(0,5) %}
+
+                        <li class="list-group-item"><a href="{{ path('edit_commande',{'slug' : commande.slug}) }}"><strong>{{commande.nom|upper}}  {{  commande.prenom |upper}}
+                                </strong>':'{{ commande.referencecommande }}</a></li>
+
+                    {%  endfor %}
+                    </ul>
+                </div>
+
+                <div class="card w-auto" style="width: 18rem;">
+
+                    <h5 class="card-title text-center h2">Derniers articles</h5>
+
+                    <ul class="list-group list-group-flush  text-center">
+
+                        {% for article in articles|slice(0,5) %}
+
+                            <li class="list-group-item"><a href="{{ path('edit_article',{'slug' : article.slug}) }}"><strong> {{ article.title|upper  }}</a></li>
+
+                        {%  endfor %}
+
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+
 {% endblock %}

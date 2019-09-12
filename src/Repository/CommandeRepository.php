@@ -47,4 +47,10 @@ class CommandeRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findOneByReferencecommande($getStatus)
+
+    {
+
+
+    }
 }
