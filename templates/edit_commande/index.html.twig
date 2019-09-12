@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editer une commande{% endblock %}
+
+{% block body %}
+
+    <div class="container container-bottom container-top">
+
+        <div class="block-clair mb-5 mx-5 border-primary">
+
+            <h2 class="titre">Commande</h2>
+            <div class="mx-1">
+                {{ form_start(formcommande)}}
+                {{ form_row(formcommande.Nom) }}
+                {{ form_row(formcommande.prenom) }}
+                {{ form_row(formcommande.referencecommande) }}
+                {{ form_row(formcommande.email) }}
+                {{ form_row(formcommande.datecommande) }}
+                {{ form_row(formcommande.status) }}
+                <button class="submit btn btn-primary">Mettre à jour</button>
+                {{ form_end(formcommande)}}
+                <button href="#" class="submit btn btn-primary mx-1 mt-3 ">Supprimer</button>
+                <br/>
+                <button class="btn btn-secondary mx-1 mt-3"> <a href="javascript:history.back()">Retour</a></button>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+
+{% endblock %}

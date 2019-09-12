@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.title|upper}}{% endblock %}
+
+{% block body %}
+
+    <div class="container container-bottom container-top  ">
+
+        <h1 class="titre">{{ article.title}}</h1>
+       <br/>
+
+        <p class="titre">{{ article.content }}</p>
+
+        <br/>
+
+        <button class="btn btn-secondary "> <a href="javascript:history.back()">Retour</a></button>
+
+
+    </div>
+{% endblock %}

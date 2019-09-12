@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se connecter{% endblock %}
+
+{% block body %}
+
+    <div class="container container-bottom container-top">
+
+        <h1 class="titre">Connexion</h1>
+
+        {{ form_start(form) }}
+
+        {{ form_row(form.username) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.motdepasse) }}
+        <button class="btn btn-primary submit">Se connecter</button>
+        {{ form_end(form) }}
+        <br/>
+        <button href="{{ path('back_office') }}" class="btn btn-primary ">Direct au back-office</button>
+    </div>
+
+{% endblock %}
