@@ -40,7 +40,7 @@ border : 1px;
 }
 
 .block-fonce{
-    background-color: #FCFCFC;
+    background-color: #6D131D;
     border : 1px;
 
 }
@@ -48,4 +48,21 @@ border : 1px;
 .policeshadow {
     text-shadow: #ffffff 1px 1px 1px 0.5;
 }
+
+.jumbochange {
+    background-image: url("../img/Accueil.desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:white;
+    text-align: center;
+}
+
+@media(max-width: 995px){
+    .footer {
+        display :none
+    }
+
+    .container-bottom { margin-bottom:20%;}
+    .container-top {margin-top: 20%; }
+    }
 

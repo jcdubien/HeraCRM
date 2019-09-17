@@ -6,17 +6,27 @@
 
     <div class="container container-bottom container-top">
 
-        <h1 class="titre">Connexion</h1>
+        <h1 class="titre container-top mb-5">Connexion</h1>
 
-        {{ form_start(form) }}
+        <form action="{{path('security_login')}}" method="post">
+            <div class="form-group">
+                <input placeholder="adresse email" required name="_username" type="text" class="form-control">
 
-        {{ form_row(form.username) }}
-        {{ form_row(form.email) }}
-        {{ form_row(form.motdepasse) }}
-        <button class="btn btn-primary submit">Se connecter</button>
-        {{ form_end(form) }}
-        <br/>
-        <button href="{{ path('back_office') }}" class="btn btn-primary ">Direct au back-office</button>
+            </div>
+
+            <div class="form-group">
+                <input placeholder="mot de passe" required name="_password" type="password" class="form-control">
+
+            </div>
+
+            <div class="form-group">
+                <button class="submit btn btn-success">Connexion</button>
+            </div>
+
+
+        </form>
+
+
     </div>
 
 {% endblock %}

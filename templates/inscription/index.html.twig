@@ -1,8 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Se connecter{% endblock %}
+{% block title %}S'inscrire{% endblock %}
 
 {% block body %}
+
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
 
     <div class="container container-bottom container-top">
 
@@ -12,6 +18,7 @@
         {{ form_row(form.email) }}
         {{ form_row(form.username) }}
         {{ form_row(form.motdepasse) }}
+        {{ form_row(form.godmode) }}
         <button class="btn btn-primary submit">S'inscrire</button>
         {{ form_end(form) }}
 

@@ -10,16 +10,16 @@ use Symfony\Component\Routing\Annotation\Route;
 class ConnexionController extends AbstractController
 {
     /**
-     * @Route("/connexion", name="connexion")
+     * @Route("/connexion", name="security_login")
      */
-    public function index()
+    public function login()
     {
-        $utilisateur=new Utilisateur();
-        $form=$this->createForm(UtilisateurType::class);
+
+
 
         return $this->render('connexion/index.html.twig', [
-            'controller_name' => 'ConnexionController',
-            'form' => $form->createView()
+            'controller_name' => 'ConnexionController'
+
         ]);
     }
 }

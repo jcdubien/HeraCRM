@@ -19,9 +19,7 @@ class UtilisateurType extends AbstractType
             ->add('email',EmailType::class,array('label'=>'Votre Email'))
             ->add('motdepasse',PasswordType::class,array('label'=>'Mot de passe'))
             ->add('username',TextType::class,array('label'=>'Votre Nom'))
-
-
-        ;
+            ->add('godmode',CheckboxType::class,array('label'=>'Super utilisateur ?'));
     }
 
     public function configureOptions(OptionsResolver $resolver)

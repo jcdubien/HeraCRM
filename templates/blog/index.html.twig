@@ -9,36 +9,60 @@
 
     <div class="row mr-5 justify-content-around">
 
-        <div class="  block-fonce col-7 mr-5 ">
+        <div class="  block-fonce col-7 mr-5 border ">
 
             <h1 class="titre mb-5 ">DERNIERS ARTICLES</h1>
 
-            {% for article in articles %}
+            {% for row in articles|batch(2) %}
+                <div class="row">
+                    {% for article in row %}
+                        <div class="col-md-6 mb-5">
 
-                <div class="mb-5 border-danger text-center">
+                            <a href="{{ path( 'show_article',{'slug' : article.slug} ) }}" class="col card titre align-self-center text-uppercase">
 
-                <a href="{{ path( 'show_article',{'slug' : article.slug} ) }}" class="col card titre align-self-center text-uppercase">
+                                <h3 class="card-header">{{ article.title }} </h3>
 
-                    <h3 class="card-header">{{ article.title }} </h3>
+                                <div class="card-body">
 
-                    <div class="card-body">
+                                    <h5 class="card-title">{{ article.extrait  }} </h5>
 
-                        <h5 class="card-title">{{ article.extrait  }} </h5>
+                                </div>
 
-                    </div>
+                                <img style="height: 200px; width: 100%; display: block;" src="{{ article.image }}" alt="Card image">
 
-                    <img style="height: 200px; width: 100%; display: block;" src="{{ article.image }}" alt="Card image">
-
-
-
-                </a>
+                            </a>
+                        </div>
+                    {% endfor %}
                 </div>
-            {%  endfor %}
+
+            {% endfor %}
+
+            {#{% for article in articles %}
+
+                <div class=" col-6 mb-5 border-danger text-center">
+
+
+
+                    <a href="{{ path( 'show_article',{'slug' : article.slug} ) }}" class="col card titre align-self-center text-uppercase">
+
+                                <h3 class="card-header">{{ article.title }} </h3>
+
+                                <div class="card-body">
+
+                                    <h5 class="card-title">{{ article.extrait  }} </h5>
+
+                                </div>
+
+                                <img style="height: 200px; width: 100%; display: block;" src="{{ article.image }}" alt="Card image">
+
+                        </a>
+                </div>
+            {%  endfor %}#}
 
         </div>
 
 
-        <div class=" col-4 block-fonce mx-2">
+        <div class=" col-4 block-fonce mx-2 border">
 
             <h1 class="titre mb-5 text-center">CATEGORIES</h1>
 

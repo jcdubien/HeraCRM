@@ -53,23 +53,6 @@ class Commande
      */
     private $slug;
 
-    /**
-     * Initialise le slug
-     *
-     * @ORM\PrePersist()
-     * @ORM\PreUpdate()
-     *
-     * @return void
-     *
-     */
-    public function initializeslug()
-    {
-        if(empty($this->slug)) {
-            $slugify=new Slugify();
-            $this->slug = $slugify($this->referencecommande);
-        }
-
-    }
 
 
     public function getId(): ?int

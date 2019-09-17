@@ -18,7 +18,7 @@ class CommandeChoiceController extends AbstractController
     {
 
         $commandechoice=new Commande();
-        $form=$this->createForm(CommandeChoiceType::class);
+        $form=$this->createForm(CommandeChoiceType::class,$commandechoice);
 
 
         $form->handleRequest($request);
