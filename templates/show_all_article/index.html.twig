@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ShowAllArticleController!{% endblock %}
+
+{% block body %}
+<div class="container">
+
+
+    <div class="container-top container container-bottom" >
+
+        <h5 class="card-title text-center h2">Tous les articles</h5>
+
+        <ul class="list-group list-group-flush  text-center">
+
+            {% for article in articles %}
+
+                <li class="list-group-item"><a href="{{ path('edit_article',{'slug' : article.slug}) }}">
+                        {{ article.title|upper  }}</a></li>
+
+            {%  endfor %}
+
+            <a href="{{ path('back_office') }}" class="btn btn-primary card-link col-5 mx-auto my-5">Retour à l'interface principale</a>
+
+        </ul>
+    </div>
+
+</div>
+{% endblock %}

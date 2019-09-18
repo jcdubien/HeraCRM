@@ -27,6 +27,7 @@ class CommandeChoiceController extends AbstractController
             $commandechoice=$form->getData();
             $commande=$commandeRepository->findOneBy(['referencecommande' => $commandechoice->getReferencecommande()]);
             if (!$commande) {
+                $this->
                 $this->redirectToRoute('error');
             }
 

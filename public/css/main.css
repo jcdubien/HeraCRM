@@ -57,6 +57,24 @@ border : 1px;
     text-align: center;
 }
 
+
+.jumbocontact {
+    background-image: url("../img/miryam-leon-Jdpvhn6xA0w-unsplash(1).jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:white;
+    text-align: center;
+}
+
+.jumboteam {
+    background-image: url("../img/Agence1desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color:white;
+    text-align: center;
+}
+
+
 @media(max-width: 995px){
     .footer {
         display :none

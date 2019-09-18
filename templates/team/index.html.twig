@@ -3,23 +3,28 @@
 {% block title %}Hello CrmController!{% endblock %}
 
 {% block body %}
-    <div class="container mb-5 container-bottom container-top">
-        <div class="jumbotron my-5">
-            <h1>
+
+    <div class="jumbotron jumbotron-fluid my-5 jumboteam">
+
+        <div class="container">
+
+            <img src="{{ asset('img/logo.png') }}" style="height: 20%; width: 20%" alt="logo Héra Créations" class="titre">
+            <h1 style="color:white;text-shadow: 1px 1px  2px #1b1e21">
                 Notre équipe
             </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut fuga id laudantium libero, natus nobis optio
-                pariatur, perspiciatis, quae repudiandae sapiente sed soluta velit veniam voluptas? Accusantium autem
-                corporis cumque deleniti dolor dolorem ea eaque facilis fuga inventore iste iusto nulla omnis qui quisquam
-                repellendus, saepe sapiente suscipit vitae voluptas!
-            </p>
+
         </div>
+    </div>
+
+    <div class="container mb-5 container-bottom container-top">
 
         <div class="row  d-flex justify-content-around my-5 container-bottom">
 
-            <div class="card col mr-3">
+            <div class="card col-xl-4 col-sm-10 mx-auto mb-5">
 
-                <div class="card-body ">
+                <div class="card-body text-center ">
+
+                    <img src="{{ asset('img/70141723_497783094341788_1083612835667247104_n.jpg') }}" class="card-img-top" style="position: center; max-height: 100px;width:auto" alt="Gaêl Lequéré">
                     <h5 class="card-title">Gaêl Lequéré</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <a href="#" class="btn btn-primary">Consulter</a>
@@ -27,9 +32,11 @@
 
             </div>
 
-            <div class="card col mr-3 ">
+            <div class="card col-xl-4 col-sm-10 mx-auto ">
 
-                <div class="card-body ">
+                <div class="card-body text-center">
+                    <img src="{{ asset('img/69934365_2660818673951610_5390490269252583424_n.jpg') }}" class="card-img-top" style="position: center; max-height: 100px;width:auto" alt="Gaêl Lequéré">
+
                     <h5 class="card-title">Masssimo</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <a href="#" class="btn btn-primary">Consulter</a>
@@ -42,9 +49,11 @@
 
         <div class="row  d-flex justify-content-around my-5 container-bottom">
 
-            <div class="card col mr-3">
+            <div class="card col-xl-4 col-sm-10 mr-3 mb-5 mx-auto">
 
-                <div class="card-body ">
+                <div class="card-body text-center mb-5 ">
+                    <img src="{{ asset('img/56295343_383610612480159_8554437185514766336_n.jpg') }}" class="card-img-top" style="position: center; max-height: 100px;width:auto" alt="Gaêl Lequéré">
+
                     <h5 class="card-title">Maria</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <a href="#" class="btn btn-primary">Consulter</a>
@@ -52,9 +61,11 @@
 
             </div>
 
-            <div class="card col mr-3 ">
+            <div class="card col-xl-4 col-sm-10  mr-3 mb-5 mx-auto ">
 
-                <div class="card-body ">
+                <div class="card-body text-center">
+                    <img src="{{ asset('img/20190721_111123.jpg') }}" class="card-img-top" style="position: center; max-height: 100px;width:auto" alt="Gaêl Lequéré">
+
                     <h5 class="card-title">Jean-Charles</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                     <a href="#" class="btn btn-primary">Consulter</a>

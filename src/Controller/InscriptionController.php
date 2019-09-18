@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Utilisateur;
+use App\Form\UserType;
 use App\Form\UtilisateurType;
 use Doctrine\ORM\EntityManager;
 use MongoDB\Driver\Manager;
@@ -20,15 +22,15 @@ class InscriptionController extends AbstractController
     {
 
         $entityManager=$this->getDoctrine()->getManager();
-        $utilisateur=new Utilisateur();
-        $form=$this->createForm(UtilisateurType::class,$utilisateur);
+        $user=new User();
+        $form=$this->createForm(UserType::class,$user);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $hash = $encoder->encodePassword($utilisateur,$utilisateur->getMotdepasse());
-            $utilisateur->setMotdepasse($hash);
-            $entityManager->persist($utilisateur);
+
+
+            $entityManager->persist($user);
             $entityManager->flush();
             $this->addFlash('success','Votre utilisateur a bien été créé ! ');
         }

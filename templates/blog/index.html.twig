@@ -4,14 +4,26 @@
 
 {% block body %}
 
+    <div class="jumbotron jumbotron-fluid my-5 jumbochange">
+
+        <div class="container">
+
+            <img src="{{ asset('img/logo.png') }}" style="height: 20%; width: 20%" alt="logo Héra Créations" class="titre">
+
+
+        </div>
+    </div>
 
 <div class=" container-top container-bottom mx-5">
 
+
+
+
     <div class="row mr-5 justify-content-around">
 
-        <div class="  block-fonce col-7 mr-5 border ">
+        <div class="  block-clair col-7 mr-5 border ">
 
-            <h1 class="titre mb-5 ">DERNIERS ARTICLES</h1>
+            <h1 class="titre my-5 ">DERNIERS ARTICLES</h1>
 
             {% for row in articles|batch(2) %}
                 <div class="row">
@@ -64,7 +76,7 @@
 
         <div class=" col-4 block-fonce mx-2 border">
 
-            <h1 class="titre mb-5 text-center">CATEGORIES</h1>
+            <h1 class="titre my-5 text-center">CATEGORIES</h1>
 
             <div class="card mb-3 w-auto" style="width: 18rem;">
                 <div class="card-body ">

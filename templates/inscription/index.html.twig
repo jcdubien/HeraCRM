@@ -14,13 +14,15 @@
 
         <h1 class="titre">Inscription</h1>
 
-        {{ form_start(form) }}
+        {{form_start(form)}}
         {{ form_row(form.email) }}
-        {{ form_row(form.username) }}
-        {{ form_row(form.motdepasse) }}
-        {{ form_row(form.godmode) }}
-        <button class="btn btn-primary submit">S'inscrire</button>
+        {{ form_row(form.firstName) }}
+        {{ form_row(form.password) }}
+        {{ form_row(form.roles|t) }}
         {{ form_end(form) }}
+
+        <button class="btn btn-primary submit">S'inscrire</button>
+
 
     </div>
 
